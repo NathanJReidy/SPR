@@ -4871,3 +4871,15 @@ p {
   }
 }
 
+button {
+  margin-top: 20px;
+  line-height: 40px;
+  font-weight: bold;
+  padding: 0 20px;
+  background: salmon;
+  border: none;
+}
+button :hover {
+  background: lightsalmon;
+}
+

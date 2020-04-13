@@ -15,6 +15,7 @@ const yourScoreId = document.querySelector('#your_score_id');
 const computerScoreId = document.querySelector('#computer_score_id');
 const topCount = document.querySelector('#top_count_id');
 
+
 function main() {
 		rock.addEventListener('click', function() {
 			//while (!(playerTotal === 3 || computerTotal == 3)) {
@@ -134,12 +135,38 @@ function scoreUpdate() {
 function matchCheck() {
 	if (playerTotal === 3 || computerTotal == 3) {
 		matchWinner();
-		//playAgain();
+		playAgain();
 	}
 }
 
+function resetScores() {
+	computerTotal = 0;
+    playerTotal = 0;
+    roundCount = 0;
+}
 
-// function playAgain() {
+function playAgain() {
+	// Create paragraph and text response asking if player wants to play again
+    //const para = document.createElement("P");
+	const textGame = document.createTextNode(". Do you want to play again?");
+    //para.appendChild(textGame);
+    document.querySelector("#top_count_id").appendChild(textGame);
+
+    // Create 'yes' button in answer to the question 'Do you want to play again?'
+    const yesButton = document.createElement("button");
+    yesButton.innerHTML = "Yes";
+    const body = document.querySelector(".top_count");
+    body.appendChild(yesButton);
+
+    // Create 'no' button in answer to the question 'Do you want to play again?'
+    const noButton = document.createElement("button");
+    noButton.innerHTML = "No";
+    document.querySelector(".top_count").appendChild(noButton);
+}
+
+
+
+//function playAgain() {
 // 	let again = prompt("Do you want to play again? ('yes' or 'no')");
 // 	if (again.toLowerCase() === "yes") {
 // 		computerTotal = 0;
