@@ -25,6 +25,20 @@ rock.addEventListener('click', function() {
 	//playAgain();
 //})
 
+paper.addEventListener('click', function() {
+	//while (!(playerTotal === 3 || computerTotal == 3)) {
+	let player = "paper";
+	let computer = computerChooseMove();
+	playRound(player, computer);
+})
+
+scissors.addEventListener('click', function() {
+	//while (!(playerTotal === 3 || computerTotal == 3)) {
+	let player = "scissors";
+	let computer = computerChooseMove();
+	playRound(player, computer);
+})
+
 // roundId.innerText = "";
 // roundId.innerHTML = "<h3>Hello</h3>";
 // roundId.style.borderBottom = 'solid 3px #000";
