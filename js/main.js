@@ -13,40 +13,55 @@ const scissors = document.querySelector('#scissors_id');
 const roundId = document.querySelector('#round_id');
 const yourScoreId = document.querySelector('#your_score_id');
 const computerScoreId = document.querySelector('#computer_score_id');
+const topCount = document.querySelector('#top_count_id');
+
+
+// roundId.innerText = "";
+// roundId.innerHTML = "<h3>Hello</h3>";
+// roundId.style.borderBottom = 'solid 3px #000";
+// roundId.style.color = "red";
+// .style.backgroundColor = "#f4f4f4";
 
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
-		console.log("Player wins! Paper beats rock.");
+		//console.log("You win! Paper beats rock.");
+		topCount.textContent = "You win! Paper beats rock.";
 		playerTotal++;
 		roundCount++;
 		scoreUpdate();
 	} else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() == "scissors") {
-		console.log("Player wins! Rock beats scissors! ");
+		//console.log("You win! Rock beats scissors! ");
+		topCount.textContent = "You win! Rock beats scissors!";
 		playerTotal++;
 		roundCount++;
 		scoreUpdate();
 	} else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() == "paper") {
-		console.log("Player wins! Scissors beats paper!"); 
+		//console.log("You win! Scissors beats paper!"); 
+		topCount.textContent = "You win! Scissors beats paper!";
 		playerTotal++;
 		roundCount++;
 		scoreUpdate();
 	} else if (computerSelection.toLowerCase() === "paper" && playerSelection.toLowerCase() === "rock") {
-		console.log("Computer wins! Paper beats rock.");
+		//console.log("You win! Paper beats rock.");
+		topCount.textContent = "You win! Paper beats rock.";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
 	} else if (computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() == "scissors") {
-		console.log("Computer wins! Rock beats scissors! ");
+		//console.log("You win! Rock beats scissors! ");
+		topCount.textContent = "You win! Rock beats scissors! ";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
 	} else if (computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase() == "paper") {
-		console.log("Computer wins! Scissors beats paper!"); 
+		//console.log("You win! Scissors beats paper!"); 
+		topCount.textContent = "You win! Scissors beats paper!";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
 	} else if (computerSelection.toLowerCase() === playerSelection.toLowerCase()) {
-		console.log("It's a tie! You both chose " + playerSelection.toLowerCase() + ".");
+		//console.log("It's a tie! You both chose " + playerSelection.toLowerCase() + ".");
+		topCount.textContent = "It's a tie! You both chose " + playerSelection.toLowerCase() + ".";
 		roundCount++;
 		scoreUpdate();
 	} else {
