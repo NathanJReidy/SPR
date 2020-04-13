@@ -84,10 +84,12 @@ function gameOver() {
 }
 
 function main() {
-	console.log("Welcome to Scissors, Paper, Rock! The first person to win 3 rounds wins the Match. Let's begin! ")
+	console.log("Welcome to Scissors, Paper, Rock! The first person to win 3 rounds wins the Match. Let's begin! ");
 	while (!(playerTotal === 3 || computerTotal == 3)) {
 		playRound(playerChooseMove(), computerChooseMove());
 	} 
 	matchWinner();
 	playAgain();
 }
+
+main()
