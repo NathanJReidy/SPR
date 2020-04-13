@@ -14,10 +14,6 @@ const roundId = document.querySelector('#round_id');
 const yourScoreId = document.querySelector('#your_score_id');
 const computerScoreId = document.querySelector('#computer_score_id');
 
-roundId.textContent = 'HELLO'
-
-
-
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
 		console.log("Player wins! Paper beats rock.");
@@ -80,7 +76,10 @@ function matchWinner() {
 }
 
 function scoreUpdate() {
-	console.log("Computer: " + computerTotal + ", Player: " + playerTotal + ", Round: " + roundCount);
+	//console.log("Computer: " + computerTotal + ", Player: " + playerTotal + ", Round: " + roundCount);
+	roundId.textContent = "Round: " + roundCount;
+    yourScoreId.textContent = "Your Score: " +  playerTotal;
+    computerScoreId.textContent = "Computer Score: " + computerTotal;
 }
 
 function playAgain() {
