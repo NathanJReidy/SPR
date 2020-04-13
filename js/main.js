@@ -2,6 +2,9 @@ let computerTotal = 0;
 let playerTotal = 0;
 let roundCount = 0;
 
+const rock = document.querySelector('#rock_id');
+rock.onclick = () => alert("You clicked rock! "); 
+
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
 		console.log("Player wins! Paper beats rock.");
@@ -93,3 +96,4 @@ function main() {
 }
 
 main()
+
