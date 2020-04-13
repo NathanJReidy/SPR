@@ -2,8 +2,21 @@ let computerTotal = 0;
 let playerTotal = 0;
 let roundCount = 0;
 
+//const rock = document.querySelector('#rock_id');
+//rock.onclick = () => alert("You clicked rock! "); 
+//console.dir(document.all);
+
+// We want to create variables for all the objects we need to manipulate on the page.
 const rock = document.querySelector('#rock_id');
-rock.onclick = () => alert("You clicked rock! "); 
+const paper = document.querySelector('#paper_id');
+const scissors = document.querySelector('#scissors_id');
+const roundId = document.querySelector('#round_id');
+const yourScoreId = document.querySelector('#your_score_id');
+const computerScoreId = document.querySelector('#computer_score_id');
+
+roundId.textContent = 'HELLO'
+
+
 
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
