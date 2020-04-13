@@ -15,29 +15,30 @@ const yourScoreId = document.querySelector('#your_score_id');
 const computerScoreId = document.querySelector('#computer_score_id');
 const topCount = document.querySelector('#top_count_id');
 
-rock.addEventListener('click', function() {
-	//while (!(playerTotal === 3 || computerTotal == 3)) {
-	let player = "rock";
-	let computer = computerChooseMove();
-	playRound(player, computer);
-})
-	//matchWinner();
-	//playAgain();
-//})
+function main() {
+		rock.addEventListener('click', function() {
+			//while (!(playerTotal === 3 || computerTotal == 3)) {
+			let player = "rock";
+			let computer = computerChooseMove();
+			playRound(player, computer);
+		})
+		
+		paper.addEventListener('click', function() {
+			//while (!(playerTotal === 3 || computerTotal == 3)) {
+			let player = "paper";
+			let computer = computerChooseMove();
+			playRound(player, computer);
+		})
+		
+		scissors.addEventListener('click', function() {
+			//while (!(playerTotal === 3 || computerTotal == 3)) {
+			let player = "scissors";
+			let computer = computerChooseMove();
+			playRound(player, computer);
+		})
+}
 
-paper.addEventListener('click', function() {
-	//while (!(playerTotal === 3 || computerTotal == 3)) {
-	let player = "paper";
-	let computer = computerChooseMove();
-	playRound(player, computer);
-})
-
-scissors.addEventListener('click', function() {
-	//while (!(playerTotal === 3 || computerTotal == 3)) {
-	let player = "scissors";
-	let computer = computerChooseMove();
-	playRound(player, computer);
-})
+main()
 
 // roundId.innerText = "";
 // roundId.innerHTML = "<h3>Hello</h3>";
@@ -52,45 +53,53 @@ function playRound(playerSelection, computerSelection) {
 		playerTotal++;
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	} else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() == "scissors") {
 		//console.log("You win! Rock beats scissors! ");
 		topCount.textContent = "You win! Rock beats scissors!";
 		playerTotal++;
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	} else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() == "paper") {
 		//console.log("You win! Scissors beats paper!"); 
 		topCount.textContent = "You win! Scissors beats paper!";
 		playerTotal++;
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	} else if (computerSelection.toLowerCase() === "paper" && playerSelection.toLowerCase() === "rock") {
 		//console.log("You win! Paper beats rock.");
 		topCount.textContent = "You win! Paper beats rock.";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	} else if (computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() == "scissors") {
 		//console.log("You win! Rock beats scissors! ");
 		topCount.textContent = "You win! Rock beats scissors! ";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	} else if (computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase() == "paper") {
 		//console.log("You win! Scissors beats paper!"); 
 		topCount.textContent = "You win! Scissors beats paper!";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	} else if (computerSelection.toLowerCase() === playerSelection.toLowerCase()) {
 		//console.log("It's a tie! You both chose " + playerSelection.toLowerCase() + ".");
 		topCount.textContent = "It's a tie! You both chose " + playerSelection.toLowerCase() + ".";
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	} else {
 		console.log("That's not a valid move! ");
 		roundCount++;
 		scoreUpdate();
+		matchCheck();
 	}
 }
 
@@ -105,13 +114,15 @@ function computerChooseMove() {
 	return computerMove;
 }
 
-// function matchWinner() {
-// 	if (computerTotal > playerTotal) {
-// 		console.log("Computer has won the match, " + computerTotal + " points to "  + playerTotal);
-// 	} else {
-// 		console.log("Player has won the match, " + playerTotal + " points to "  + computerTotal);
-// 	}
-// }
+function matchWinner() {
+	if (computerTotal > playerTotal) {
+		//console.log("Computer has won the match, " + computerTotal + " points to "  + playerTotal);
+		topCount.textContent = "YOU LOSE! Computer has won the match, " + computerTotal + " points to "  + playerTotal
+	} else {
+		//console.log("Player has won the match, " + playerTotal + " points to "  + computerTotal);
+		topCount.textContent = "YOU WIN! Player has won the match, " + playerTotal + " points to "  + computerTotal
+	}
+}
 
 function scoreUpdate() {
 	//console.log("Computer: " + computerTotal + ", Player: " + playerTotal + ", Round: " + roundCount);
@@ -119,6 +130,14 @@ function scoreUpdate() {
     yourScoreId.textContent = "Your Score: " +  playerTotal;
     computerScoreId.textContent = "Computer Score: " + computerTotal;
 }
+
+function matchCheck() {
+	if (playerTotal === 3 || computerTotal == 3) {
+		matchWinner();
+		//playAgain();
+	}
+}
+
 
 // function playAgain() {
 // 	let again = prompt("Do you want to play again? ('yes' or 'no')");
@@ -144,6 +163,4 @@ function scoreUpdate() {
 // 	matchWinner();
 // 	playAgain();
 // }
-
-//main()
 
