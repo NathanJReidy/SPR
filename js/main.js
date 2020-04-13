@@ -45,50 +45,49 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playerChooseMove() {
-			let player = prompt("Player, what is your move? ");
-			return player;
-		}
+	let player = prompt("Player, what is your move? ");
+	return player;
+}
 		
 function computerChooseMove() {
-			let moves = ["scissors", "paper", "rock"];
-			let computerMove = moves[Math.floor(Math.random() * moves.length)];
-			return computerMove;
-		}
+	let moves = ["scissors", "paper", "rock"];
+	let computerMove = moves[Math.floor(Math.random() * moves.length)];
+	return computerMove;
+}
 
 function matchWinner() {
-			if (computerTotal > playerTotal) {
-				console.log("Computer has won the match, " + computerTotal + " points to "  + playerTotal)
-			} else {
-				console.log("Player has won the match, " + playerTotal + " points to "  + computerTotal)
-			}
-
-		}
+	if (computerTotal > playerTotal) {
+		console.log("Computer has won the match, " + computerTotal + " points to "  + playerTotal);
+	} else {
+		console.log("Player has won the match, " + playerTotal + " points to "  + computerTotal);
+	}
+}
 
 function scoreUpdate() {
-			console.log("Computer: " + computerTotal + ", Player: " + playerTotal + ", Round: " + roundCount);
-		}
+	console.log("Computer: " + computerTotal + ", Player: " + playerTotal + ", Round: " + roundCount);
+}
 
 function playAgain() {
-			let again = prompt("Do you want to play again? ('yes' or 'no')");
-		    if (again.toLowerCase() === "yes") {
-		    	computerTotal = 0;
-		        playerTotal = 0;
-		        roundCount = 0;
-		    	main();
-		    } else {
-		    	gameOver();
-		    }
-		}
+	let again = prompt("Do you want to play again? ('yes' or 'no')");
+	if (again.toLowerCase() === "yes") {
+		computerTotal = 0;
+		playerTotal = 0;
+		roundCount = 0;
+		main();
+	} else {
+		gameOver();
+	}
+}
 
 function gameOver() {
-			console.log("Thanks for playing! ");
-		}
+	console.log("Thanks for playing! ");
+}
 
 function main() {
-			console.log("Welcome to Scissors, Paper, Rock! The first person to win 3 rounds wins the Match. Let's begin! ")
-			while (!(playerTotal === 3 || computerTotal == 3)) {
-				playRound(playerChooseMove(), computerChooseMove());
-			} 
-			matchWinner();
-			playAgain();
-        }
+	console.log("Welcome to Scissors, Paper, Rock! The first person to win 3 rounds wins the Match. Let's begin! ")
+	while (!(playerTotal === 3 || computerTotal == 3)) {
+		playRound(playerChooseMove(), computerChooseMove());
+	} 
+	matchWinner();
+	playAgain();
+}
