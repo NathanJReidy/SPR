@@ -3895,6 +3895,7 @@ p {
 
 .rock_class:hover {
   background-color: #000;
+  cursor: pointer;
 }
 
 .paper_class {
@@ -3906,6 +3907,7 @@ p {
 
 .paper_class:hover {
   background-color: #000;
+  cursor: pointer;
 }
 
 .image-5 {
@@ -3929,6 +3931,7 @@ p {
 
 .scissors_class:hover {
   background-color: #000;
+  cursor: pointer;
 }
 
 .rockpaperscissorscontainer {
