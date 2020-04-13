@@ -15,6 +15,15 @@ const yourScoreId = document.querySelector('#your_score_id');
 const computerScoreId = document.querySelector('#computer_score_id');
 const topCount = document.querySelector('#top_count_id');
 
+rock.addEventListener('click', function() {
+	//while (!(playerTotal === 3 || computerTotal == 3)) {
+	let player = "rock";
+	let computer = computerChooseMove();
+	playRound(player, computer);
+})
+	//matchWinner();
+	//playAgain();
+//})
 
 // roundId.innerText = "";
 // roundId.innerHTML = "<h3>Hello</h3>";
@@ -82,13 +91,13 @@ function computerChooseMove() {
 	return computerMove;
 }
 
-function matchWinner() {
-	if (computerTotal > playerTotal) {
-		console.log("Computer has won the match, " + computerTotal + " points to "  + playerTotal);
-	} else {
-		console.log("Player has won the match, " + playerTotal + " points to "  + computerTotal);
-	}
-}
+// function matchWinner() {
+// 	if (computerTotal > playerTotal) {
+// 		console.log("Computer has won the match, " + computerTotal + " points to "  + playerTotal);
+// 	} else {
+// 		console.log("Player has won the match, " + playerTotal + " points to "  + computerTotal);
+// 	}
+// }
 
 function scoreUpdate() {
 	//console.log("Computer: " + computerTotal + ", Player: " + playerTotal + ", Round: " + roundCount);
@@ -97,30 +106,30 @@ function scoreUpdate() {
     computerScoreId.textContent = "Computer Score: " + computerTotal;
 }
 
-function playAgain() {
-	let again = prompt("Do you want to play again? ('yes' or 'no')");
-	if (again.toLowerCase() === "yes") {
-		computerTotal = 0;
-		playerTotal = 0;
-		roundCount = 0;
-		main();
-	} else {
-		gameOver();
-	}
-}
+// function playAgain() {
+// 	let again = prompt("Do you want to play again? ('yes' or 'no')");
+// 	if (again.toLowerCase() === "yes") {
+// 		computerTotal = 0;
+// 		playerTotal = 0;
+// 		roundCount = 0;
+// 		main();
+// 	} else {
+// 		gameOver();
+// 	}
+// }
 
-function gameOver() {
-	console.log("Thanks for playing! ");
-}
+// function gameOver() {
+// 	console.log("Thanks for playing! ");
+// }
 
-function main() {
-	console.log("Welcome to Scissors, Paper, Rock! The first person to win 3 rounds wins the Match. Let's begin! ");
-	while (!(playerTotal === 3 || computerTotal == 3)) {
-		playRound(playerChooseMove(), computerChooseMove());
-	} 
-	matchWinner();
-	playAgain();
-}
+// function main() {
+// 	//console.log("Welcome to Scissors, Paper, Rock! The first person to win 3 rounds wins the Match. Let's begin! ");
+// 	while (!(playerTotal === 3 || computerTotal == 3)) {
+// 		playRound(playerChooseMove(), computerChooseMove());
+// 	} 
+// 	matchWinner();
+// 	playAgain();
+// }
 
-main()
+//main()
 
