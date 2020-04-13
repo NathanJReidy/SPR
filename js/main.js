@@ -139,10 +139,12 @@ function matchCheck() {
 	}
 }
 
-function resetScores() {
+function resetMatch() {
 	computerTotal = 0;
     playerTotal = 0;
-    roundCount = 0;
+	roundCount = 0;
+	topCount.textContent = "";
+	scoreUpdate();
 }
 
 function playAgain() {
@@ -161,7 +163,16 @@ function playAgain() {
     // Create 'no' button in answer to the question 'Do you want to play again?'
     const noButton = document.createElement("button");
     noButton.innerHTML = "No";
-    document.querySelector(".top_count").appendChild(noButton);
+	document.querySelector(".top_count").appendChild(noButton);
+	
+	yesButton.addEventListener('click', function() {
+		resetMatch();
+	})
+
+	noButton.addEventListener('click', function() {
+		topCount.textContent = "Thanks for playing!";
+		resetMatch();
+	})
 }
 
 
