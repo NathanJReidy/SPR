@@ -13,25 +13,34 @@ const computerScoreId = document.querySelector('#computer_score_id');
 
 const topCount = document.querySelector('#text_rules_id');
 
-const rockLeftRight = document.querySelector('#rock_left_right_id')
-const rockRightLeft = document.querySelector('#rock_right_left_id')
+const imgLeftRight = document.querySelector('#rock_left_right_id')
+const imgRightLeft = document.querySelector('#rock_right_left_id')
 
+//imgLeftRight.src = "images/rocklefttoright2.png";
+//imgLeftRight.src = "images/scissorslefttoright.png";
+//imgLeftRight.src = "images/paperlefttoright.png";
+//imgRightLeft.src = "images/scissorsrighttoleft.png";
+//imgRightLeft.src = "images/paperrighttoleft.png";
+//imgRightLeft.src = "images/rockrighttoleft.png";
 
 function main() {
 		rock.addEventListener('click', function() {
 			let player = "rock";
+			imgLeftRight.src = "images/rocklefttoright2.png";
 			let computer = computerChooseMove();
 			playRound(player, computer);
 		})
 		
 		paper.addEventListener('click', function() {
 			let player = "paper";
+			imgLeftRight.src = "images/paperlefttoright.png";
 			let computer = computerChooseMove();
 			playRound(player, computer);
 		})
 		
 		scissors.addEventListener('click', function() {
 			let player = "scissors";
+			imgLeftRight.src = "images/scissorslefttoright.png";
 			let computer = computerChooseMove();
 			playRound(player, computer);
 		})
@@ -59,19 +68,19 @@ function playRound(playerSelection, computerSelection) {
 		scoreUpdate();
 		matchCheck();
 	} else if (computerSelection.toLowerCase() === "paper" && playerSelection.toLowerCase() === "rock") {
-		topCount.textContent = "You win! Paper beats rock.";
+		topCount.textContent = "You lose! Paper beats rock.";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
 		matchCheck();
 	} else if (computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() == "scissors") {
-		topCount.textContent = "You win! Rock beats scissors! ";
+		topCount.textContent = "You lose! Rock beats scissors! ";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
 		matchCheck();
 	} else if (computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase() == "paper") {
-		topCount.textContent = "You win! Scissors beats paper!";
+		topCount.textContent = "You lose! Scissors beats paper!";
 		computerTotal++;
 		roundCount++;
 		scoreUpdate();
@@ -92,6 +101,13 @@ function playerChooseMove() {
 function computerChooseMove() {
 	let moves = ["scissors", "paper", "rock"];
 	let computerMove = moves[Math.floor(Math.random() * moves.length)];
+	if (computerMove === "scissors") {
+		imgRightLeft.src = "images/scissorsrighttoleft.png";
+	} else if (computerMove === "paper") {
+		imgRightLeft.src = "images/paperrighttoleft.png";
+	} else if (computerMove === "rock") {
+		imgRightLeft.src = "images/rockrighttoleft.png";
+	}
 	return computerMove;
 }
 
