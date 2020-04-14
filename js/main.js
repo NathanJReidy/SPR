@@ -133,6 +133,8 @@ function resetMatch() {
 	scoreUpdate();
 }
 
+// I need to fix this function below so that the button appears on a separate line below, 
+// and add spacing between the buttons as well as different colours for each button.
 function playAgain() {
 	// Create paragraph and text response asking if player wants to play again
     //const para = document.createElement("P");
