@@ -13,15 +13,8 @@ const computerScoreId = document.querySelector('#computer_score_id');
 
 const topCount = document.querySelector('#text_rules_id');
 
-const imgLeftRight = document.querySelector('#rock_left_right_id')
-const imgRightLeft = document.querySelector('#rock_right_left_id')
-
-//imgLeftRight.src = "images/rocklefttoright2.png";
-//imgLeftRight.src = "images/scissorslefttoright.png";
-//imgLeftRight.src = "images/paperlefttoright.png";
-//imgRightLeft.src = "images/scissorsrighttoleft.png";
-//imgRightLeft.src = "images/paperrighttoleft.png";
-//imgRightLeft.src = "images/rockrighttoleft.png";
+const imgLeftRight = document.querySelector('#rock_left_right_id');
+const imgRightLeft = document.querySelector('#rock_right_left_id');
 
 function main() {
 		rock.addEventListener('click', function() {
@@ -145,25 +138,25 @@ function playAgain() {
     //const para = document.createElement("P");
 	const textGame = document.createTextNode(". Do you want to play again?");
     //para.appendChild(textGame);
-    document.querySelector("#top_count_id").appendChild(textGame);
+    document.querySelector("#text_rules_id").appendChild(textGame);
 
     // Create 'yes' button in answer to the question 'Do you want to play again?'
     const yesButton = document.createElement("button");
     yesButton.innerHTML = "Yes";
-    const body = document.querySelector(".top_count");
+    const body = document.querySelector("#text_rules_id");
     body.appendChild(yesButton);
 
     // Create 'no' button in answer to the question 'Do you want to play again?'
     const noButton = document.createElement("button");
     noButton.innerHTML = "No";
-	document.querySelector(".top_count").appendChild(noButton);
+	document.querySelector("#text_rules_id").appendChild(noButton);
 	
 	yesButton.addEventListener('click', function() {
 		resetMatch();
 	})
 
 	noButton.addEventListener('click', function() {
-		topCount.textContent = "Thanks for playing!";
 		resetMatch();
+		topCount.textContent = "Thanks for playing!";
 	})
 }
