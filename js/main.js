@@ -6,10 +6,15 @@ let roundCount = 0;
 const rock = document.querySelector('#rock_id');
 const paper = document.querySelector('#paper_id');
 const scissors = document.querySelector('#scissors_id');
-const roundId = document.querySelector('#round_id');
+
 const yourScoreId = document.querySelector('#your_score_id');
+const roundId = document.querySelector('#round_id');
 const computerScoreId = document.querySelector('#computer_score_id');
-const topCount = document.querySelector('#top_count_id');
+
+const topCount = document.querySelector('#text_rules_id');
+
+const rockLeftRight = document.querySelector('#rock_left_right_id')
+const rockRightLeft = document.querySelector('#rock_right_left_id')
 
 
 function main() {
@@ -99,8 +104,8 @@ function matchWinner() {
 }
 
 function scoreUpdate() {
+	yourScoreId.textContent = "Your Score: " +  playerTotal;
 	roundId.textContent = "Round: " + roundCount;
-    yourScoreId.textContent = "Your Score: " +  playerTotal;
     computerScoreId.textContent = "Computer Score: " + computerTotal;
 }
 
